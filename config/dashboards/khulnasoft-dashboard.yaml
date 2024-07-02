@@ -1,0 +1,23 @@
+apiVersion: 1
+providers:
+- allowUiUpdates: false
+  disableDeletion: false
+  folder: KhulnaSoft System
+  name: khulnasoft-system
+  options:
+    foldersFromFilesStructure: false
+    path: /tmp/dashboards/KhulnaSoft-System
+  orgId: 1
+  type: file
+  updateIntervalSeconds: 30
+- allowUiUpdates: false
+  disableDeletion: false
+  folder: KhulnaSoft Templates
+  name: khulnasoft-templates
+  options:
+    foldersFromFilesStructure: false
+    path: /tmp/dashboards/KhulnaSoft-Templates
+  orgId: 1
+  type: file
+  updateIntervalSeconds: 30
+

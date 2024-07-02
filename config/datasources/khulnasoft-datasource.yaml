@@ -1,0 +1,46 @@
+apiVersion: 1
+datasources:
+- access: proxy
+  isDefault: true
+  jsonData:
+    requestUrl: ${KHULNASOFT_REQUEST_URL}
+    traceUrl: ${KHULNASOFT_TRACEURL}
+    aiUrl: ${KHULNASOFT_AI_URL}
+  name: KhulnaSoft
+  type: khulnasoft-khulnasoft-datasource
+  uid: KhulnaSoft
+  url: null
+- jsonData:
+    port: 9000
+    server: ${CLICKHOUSE_SERVER}
+    username: ${CLICKHOUSE_USER}
+  name: KhulnaSoft ClickHouse
+  secureJsonData:
+    password: ${CLICKHOUSE_PASSWORD}
+  type: grafana-clickhouse-datasource
+  uid: KhulnaSoft ClickHouse
+- database: khulnasoft
+  jsonData:
+    connMaxLifetime: 14400
+    maxIdleConns: 5
+    maxOpenConns: 5
+  name: KhulnaSoft MySQL
+  secureJsonData:
+    password: ${MYSQL_PASSWORD}
+  type: mysql
+  uid: KhulnaSoft MySQL
+  url: ${MYSQL_URL}
+  user: ${MYSQL_USER}
+- name: KhulnaSoft-Tempo
+  uid: KhulnaSoft-Tempo
+  type: tempo
+  access: proxy
+  url: ${KHULNASOFT_REQUEST_URL}
+  jsonData: 
+    traceQuery:
+      timeShiftEnabled: true
+- name: KhulnaSoft-Prometheus
+  uid: KhulnaSoft-Prometheus
+  type: prometheus
+  access: proxy
+  url: ${KHULNASOFT_REQUEST_URL}/prom
