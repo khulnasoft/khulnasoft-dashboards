@@ -51,7 +51,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           username: "khulnasoft"
-          password: "${{ secrets.REGISTRY_PASS }}"
+          password: "${{ secrets.DOCKER_TOKEN }}"
 
       - name: set env
         run: |
