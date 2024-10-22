@@ -79,8 +79,8 @@ jobs:
           file: Dockerfile
           platforms: linux/amd64,linux/arm64
           tags: |
-            "registry.cn-hongkong.aliyuncs.com/khulnasoft-ce/${{ env.IMAGE }}:${{ env.IMAGE_TAG_PREFIX }}-${{ env.IMAGE_TAG }}"
-            "registry.cn-hongkong.aliyuncs.com/khulnasoft-ce/${{ env.IMAGE }}:${{ env.IMAGE_TAG_PREFIX }}"
+            "ghcr.io/khulnasoft/${{ env.IMAGE }}:${{ env.IMAGE_TAG_PREFIX }}-${{ env.IMAGE_TAG }}"
+            "ghcr.io/khulnasoft/${{ env.IMAGE }}:${{ env.IMAGE_TAG_PREFIX }}"
 
       - name: Build and push khulnasoft agent images to beijing aliyun 
         uses: docker/build-push-action@v2
@@ -90,5 +90,5 @@ jobs:
           file: Dockerfile
           platforms: linux/amd64,linux/arm64
           tags: |
-            "registry.cn-beijing.aliyuncs.com/khulnasoft-ce/${{ env.IMAGE }}:${{ env.IMAGE_TAG_PREFIX }}-${{ env.IMAGE_TAG }}"
-            "registry.cn-beijing.aliyuncs.com/khulnasoft-ce/${{ env.IMAGE }}:${{ env.IMAGE_TAG_PREFIX }}"
+            "ghcr.io/khulnasoft/${{ env.IMAGE }}:${{ env.IMAGE_TAG_PREFIX }}-${{ env.IMAGE_TAG }}"
+            "ghcr.io/khulnasoft/${{ env.IMAGE }}:${{ env.IMAGE_TAG_PREFIX }}"
